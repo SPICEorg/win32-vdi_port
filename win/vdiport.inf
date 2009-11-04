@@ -1,0 +1,53 @@
+[Version]
+Signature = "$WINDOWS NT$"
+Class = System
+ClassGuid = {4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider = %RHAT%
+DriverVer = 10/19/2009,1.1.0.0
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+[ControlFlags]
+ExcludeFromSelect=*
+
+[Manufacturer]
+%RHAT% = redhat.Mfg
+
+[redhat.Mfg]
+%RHAT% %PORT% = VDIPort, PCI\VEN_1b36&DEV_0105
+
+[VDIPort]
+CopyFiles = VDIPort.CopyFiles
+
+[VDIPort.HW]
+AddReg = VDIPort.AddReg
+
+[VDIPort.AddReg]
+HKR,,Security,,"D:P(A;;GA;;;SY)(A;;GA;;;BA)"
+
+[VDIPort.CopyFiles]
+vdiport.sys
+
+[SourceDisksNames]
+1 = %DISK_NAME%
+
+[SourceDisksFiles]
+vdiport.sys = 1
+
+[VDIPort.Services]
+AddService = VDIPort, 0x00000002, VDIPort_Service 
+
+[VDIPort_Service]
+DisplayName    = %VDIPort.SVCDESC%                            
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\vdiport.sys                            
+
+[Strings]
+RHAT = "Red Hat"
+PORT = "Virtual Desktop Interface Port"
+VDIPort.SVCDESC = "Virtual Desktop Interface Port Driver"
+VDIPort.DRVDESC = "Virtual Desktop Interface Port Device"
+DISK_NAME = "Virtual Desktop Interface Port Install Disk"

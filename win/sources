@@ -1,0 +1,11 @@
+TARGETNAME=vdiport
+TARGETPATH=obj
+TARGETTYPE=DRIVER
+
+INCLUDES=$(SPICE_COMMON_DIR)
+
+TARGETLIBS= $(TARGETLIBS) $(DDK_LIB_PATH)\uuid.lib \
+            $(DDK_LIB_PATH)\wdmsec.lib
+
+SOURCES= vdi_port.c \
+         vdi_port.rc
