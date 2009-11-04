@@ -16,12 +16,12 @@
 #define VER_FILEDESCRIPTION_STR     "Red Hat VDI Port Driver"
 #define VER_INTERNALNAME_STR        "vdi_port.sys"
 #define VER_ORIGINALFILENAME_STR    VER_INTERNALNAME_STR
-#define VER_FILEVERSION_STR         "1.1.0.0"
+#define VER_FILEVERSION_STR         "1.2.0.0"
 #define VER_PRODUCTNAME_STR         "Spice"
 #define VER_PRODUCTVERSION_STR      VER_FILEVERSION_STR
 
 #undef  VER_PRODUCTVERSION
-#define VER_PRODUCTVERSION           1,1,0,0
+#define VER_PRODUCTVERSION           1,2,0,0
 
 #define VER_COMPANYNAME_STR         "Red Hat Inc."
 #define VER_LEGALCOPYRIGHT_STR      "© Red Hat Inc. All rights reserved."
